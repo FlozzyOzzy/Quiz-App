@@ -94,6 +94,7 @@ const questions = [
 const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
 const nextButton = document.getElementById('next-btn');
+const progressBar = document.getElementById ('progress-bar');
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -104,6 +105,7 @@ function startQuiz () {
     score = 0;
     nextButton.innerHTML = 'Next';
     showQuestion();
+    updateProgessBar();
 };
 
 function showQuestion() {
@@ -147,6 +149,7 @@ function selectAnswer(e) {
         button.disabled = true;
     });
     nextButton.style.display = 'block';
+    updateProgessBar();
 }
 
 function showScore() {
@@ -165,6 +168,13 @@ function handleNextButton() {
     } else {
         showScore();
     }
+    updateProgessBar ();
+}
+
+function updateProgessBar() {
+
+    const progressValue = (currentQuestionIndex / questions.length) * 100;
+    progressBar.value = progressValue;
 }
 
 nextButton.addEventListener('click', () => {
