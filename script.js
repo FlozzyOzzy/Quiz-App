@@ -8,7 +8,7 @@ const questions = [
             {text: 'Bangkok' , correct: false},
         ]
     },
-    {
+        {
         question: 'Which planet is known as the Red Planet?',
         answers:[
             {text: 'Venus' , correct: false},
