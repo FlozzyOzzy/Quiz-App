@@ -104,6 +104,7 @@ function startQuiz () {
     currentQuestionIndex = 0;
     score = 0;
     nextButton.innerHTML = 'Next';
+    shuffleQuestions();
     showQuestion();
     updateProgessBar();
 };
@@ -176,6 +177,14 @@ function updateProgessBar() {
     const progressValue = (currentQuestionIndex / questions.length) * 100;
     progressBar.value = progressValue;
 }
+
+function shuffleQuestions() {
+    for (let i = questions.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [questions[i], questions[j]] = [questions[j], questions[i]];
+    }
+}
+
 
 nextButton.addEventListener('click', () => {
     if (currentQuestionIndex < questions.length) {

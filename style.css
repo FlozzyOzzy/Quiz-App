@@ -6,9 +6,9 @@
 }
 body {
     font-family: Arial, sans-serif;
-    background-color: #001e4d;
+    background: linear-gradient(135deg, #49acf3, #7cc4eb);
     margin: 0;
-    padding: 0;
+    padding: 0; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,11 +25,15 @@ body {
 }
 .app h1{
   font-size: 25px;
-  color: #001e4d;
+  color: #222;
   font-weight: 600;
-  border-bottom: 1px solid #333;
-  padding-bottom: 30px;
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
   text-align: center;  
+}
+.heading-one{
+    background: #fff;
+padding: 10px;
 }
 .quiz {
     padding: 20px 0;
